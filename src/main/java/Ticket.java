@@ -27,4 +27,5 @@ public class Ticket {
         System.out.println(t.value + ": " + (t.isLucky() ? "Счастливый" : "Не счастливый"));
     }
 }
+//
 
