@@ -2,6 +2,13 @@ public class Ticket {
     private String value;
 
     public Ticket(String value) {
+        if(value == null|| value.isEmpty())
+            throw new IllegalArgumentException("Тикет не может быть пустым");
+        if(value.length() % 2 !=0)
+            throw new IllegalArgumentException("длина тикета должна быть четной");
+        if(!value.matches("\\d+"))
+            throw new IllegalArgumentException("тикет должен содержать только цифры");
+        this.value = value;
         this.value = String.format("%06d", Integer.parseInt(value));
     }
 
